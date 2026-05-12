@@ -26,7 +26,15 @@
       "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAG1Xo6guMHX19Gbng3X065izu4hQYy_DKQ7pmwSF0EK2EdL14gpMGuAPjomOiaRTHmlNsBFlIYAHD-gKDglalEFxiY1P2linWsdWy-uroozQAqw6Mf1_7rnkvN62Uh9eiw9EnAyjqJw_Q4=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/av-mallet.jpg\")",
       "Bash(gh auth *)",
       "Bash(git init *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(gh repo *)",
+      "Bash(gh api *)",
+      "Bash(netlify --version)",
+      "mcp__Claude_in_Chrome__find",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__tabs_close_mcp",
+      "Bash(git push *)"
     ]
   }
 }
