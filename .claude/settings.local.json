@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.airbnb.com.br)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebFetch(domain:www.google.com)",
+      "WebSearch",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__browser_batch",
+      "mcp__Claude_in_Chrome__get_page_text",
+      "mcp__Claude_in_Chrome__tabs_create_mcp",
+      "PowerShell(npx serve \"C:\\\\Users\\\\Guilherme\\\\Desktop\\\\airbnb\" -l 3000)",
+      "mcp__Claude_in_Chrome__computer",
+      "mcp__plugin_claude-mem_mcp-search__smart_outline",
+      "mcp__Claude_Preview__preview_start",
+      "mcp__Claude_in_Chrome__javascript_tool",
+      "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAFFsQdf5YfTaZr1KF4jhsWsAY-tfhi4m2LX1vhtT5NPwK8G_ftafvvW7SW-evmxuoXg_EtncVatJkRmm1_075tA3iITYT1CfL6yKaqa_qQbZoZ08BQa5_hKI9nSKy_aa-euSOiZHDosG1Lm=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/hardrock.jpg\")",
+      "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAFZAP3BYCNDhztfqJ_3KmcuCk3L9O8Uk5YKFSf0WmhvBNtOdf3ysa5TzoVTU8LmDCwVqH6WJO3TO4kKBKQWbQFVzBXQ3coSUJTcynizSIZiLl_bL3dozcu4E0YuhP-M639fQcvXsg=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/nayumi.jpg\")",
+      "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAEImk35IJPN-JR2Ze9ThGYUZqv-u1nPec3nLFAJr_ZqV7ICBlVfBL8e0REHPndMSD5BZGZlB36FuJlNR4TF55oUEwzOsEpEDzIm3NYY2UHaVWVSGoyfK9tHUDBVmXQqgqdp7hUywb6jvfM=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/revo.jpg\")",
+      "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAFf_vRzn0qNjlv2a_Zn4XsJCtuk1CdgKydCf0g9wrzKRWJQaNCtKupgYS9OqQdLJNniq-5-iNHlwsqg6XCAI9Xa0I5o68RRTLb2DQk83Qa1O2LyUMJmMiCCvaeLU8mlBoZW4D0D6g=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/lagoa-azul.jpg\")",
+      "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAEl4i62Tjy-RoR5ntj5R2qntekRtOyK6l0djOb3Md3lY9CBSzwZw1aZeUawYotb6WKR0xhO4BrGo7mHL-fzg93IcaWfSOzr7bW0gvfk43Yt0SynF4vfEet4dyVP57ouzYOUf1ZFdA=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/cachoeira-gleba.jpg\")",
+      "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAG71FT0lDApiUpG6yXH6RVZeigi6N0tD_KdifByaObAL-6VjGGeQ3zMS4VNKlplN6kt_7HeVlj2TWwWgzeoWDqjJ08CEWscXOaBJsJLpH2BGrlmySy5H2mqfePTJIE6qtd7N6x7=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/serra-do-mar.jpg\")",
+      "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAHNOpLi_sBORkUUSuP0ntutTBA5m0_GV-NwZUwtZ5OXQj0PAYwJwroGcd5gO9iIE6YHPVW0VwhCrbqvykrGM-htW3TbC3VYU6GuzLgl7glQe8IzE80_E8b1LOlGno2LhNv5A1oX=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/mcdonalds.jpg\")",
+      "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAFw5WS3oRNNqIiXwu3cfwt2H7reXJv_6Dex08_pOJH0SArFXLVd4FitbSrGvO2G1GpVZPpx-F0pRu9N9eow72FkupG2FSpeN2vtTPs8zShIpiOVStBy9MepQDfpZAQkImQ_ZGuv=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/assai.jpg\")",
+      "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAEzUJ6ZuRd81gg4_d2jgAf1IdPMdDG5MJXve1jhxEAV_fpj_oomSKqeI6nFjDhtK_Xs87fPVgzIpc4rh-LjmL6VYcTT-PNps0PR08WM6aaHK1ChR0KBw1ZWkRU_EI_p4px1twO-BA=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/swift.jpg\")",
+      "Bash(curl -sL \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAG1Xo6guMHX19Gbng3X065izu4hQYy_DKQ7pmwSF0EK2EdL14gpMGuAPjomOiaRTHmlNsBFlIYAHD-gKDglalEFxiY1P2linWsdWy-uroozQAqw6Mf1_7rnkvN62Uh9eiw9EnAyjqJw_Q4=w800-h400-k-no\" -o \"C:/Users/Guilherme/Desktop/airbnb/img/av-mallet.jpg\")",
+      "Bash(gh auth *)",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#f5ebe0">
+    <title>Guia do Hóspede | Pé na Areia</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏖️</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: #faf6f0;
+            color: #3a3028;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header com visual de praia */
+        .header {
+            background: #f5ebe0;
+            padding: 50px 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #d4a853, #1a8fc4, #d4a853);
+        }
+
+        .header .shell-deco {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 16px;
+        }
+
+        .header .shell-deco svg {
+            width: 24px;
+            height: 24px;
+            fill: #c9a96e;
+            opacity: 0.5;
+        }
+
+        .header .line-deco {
+            width: 60px;
+            height: 1px;
+            background: #c9a96e;
+            margin: 0 auto 16px;
+            opacity: 0.5;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            font-weight: 700;
+            color: #2a2018;
+            margin-bottom: 6px;
+            letter-spacing: 2px;
+        }
+
+        .header .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 15px;
+            color: #8a7560;
+            font-style: italic;
+            margin-bottom: 16px;
+        }
+
+        .header .wave {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+        }
+
+        .header .wave svg {
+            display: block;
+            width: 100%;
+            height: 30px;
+        }
+
+        /* Welcome card */
+        .welcome-card {
+            background: white;
+            margin: -25px 16px 20px;
+            border-radius: 16px;
+            padding: 22px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: relative;
+            z-index: 1;
+            border: 1px solid #efe8dc;
+        }
+
+        .welcome-card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #2a2018;
+        }
+
+        .welcome-card p {
+            font-size: 14px;
+            color: #6b5d4f;
+            line-height: 1.6;
+        }
+
+        /* Grid */
+        .section-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #b8a48c;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 8px 20px 12px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            padding: 0 16px 20px;
+        }
+
+        .grid-item {
+            background: white;
+            border-radius: 16px;
+            padding: 18px 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid #f0e8dc;
+        }
+
+        .grid-item:active {
+            transform: scale(0.95);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+        }
+
+        .grid-item .icon {
+            font-size: 30px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .grid-item .label {
+            font-size: 11px;
+            font-weight: 600;
+            color: #5a4a3a;
+            line-height: 1.3;
+        }
+
+        /* Review card */
+        .review-card {
+            background: white;
+            margin: 0 16px 20px;
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border: 1px solid #f0e8dc;
+        }
+
+        .review-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #2a2018;
+        }
+
+        .review-card p {
+            font-size: 13px;
+            color: #6b5d4f;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .review-card .stars {
+            font-size: 28px;
+            letter-spacing: 4px;
+            color: #d4a853;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+            color: #b8a48c;
+        }
+
+        .footer .shells {
+            font-size: 16px;
+            margin-bottom: 6px;
+            opacity: 0.6;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(42,32,24,0.5);
+            z-index: 100;
+            justify-content: center;
+            align-items: flex-end;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active { display: flex; }
+
+        .modal {
+            background: #faf6f0;
+            width: 100%;
+            max-width: 500px;
+            max-height: 85vh;
+            border-radius: 24px 24px 0 0;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
+        .modal-header {
+            padding: 20px 20px 16px;
+            border-bottom: 1px solid #efe8dc;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            background: #faf6f0;
+            border-radius: 24px 24px 0 0;
+            z-index: 1;
+        }
+
+        .modal-header h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #2a2018;
+        }
+
+        .modal-close {
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        .modal-body h4 {
+            font-size: 14px;
+            font-weight: 700;
+            margin: 20px 0 10px;
+            color: #1a8fc4;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-body h4:first-child { margin-top: 0; }
+
+        .modal-body p, .modal-body li {
+            font-size: 14px;
+            color: #5a4a3a;
+            line-height: 1.6;
+        }
+
+        .modal-body ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-body ul li {
+            padding: 6px 0 6px 20px;
+            position: relative;
+        }
+
+        .modal-body ul li::before {
+            content: '•';
+            position: absolute;
+            left: 4px;
+            color: #d4a853;
+            font-weight: bold;
+        }
+
+        /* Wifi box - sandy style */
+        .wifi-box {
+            background: white;
+            border: 2px dashed #d4a853;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            margin: 12px 0;
+        }
+
+        .wifi-box .wifi-label {
+            font-size: 11px;
+            color: #b8a48c;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .wifi-box .wifi-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1a8fc4;
+            margin-top: 4px;
+            user-select: all;
+        }
+
+        .copy-btn {
+            background: #1a8fc4;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s;
+        }
+
+        .copy-btn:active { background: #14739e; }
+
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0e8dc;
+        }
+
+        .rule-item:last-child { border-bottom: none; }
+
+        .rule-item .rule-icon { font-size: 20px; flex-shrink: 0; }
+
+        .rule-item .rule-text {
+            font-size: 14px;
+            color: #5a4a3a;
+            line-height: 1.5;
+        }
+
+        .place-card {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #f0e8dc;
+            overflow: hidden;
+        }
+
+        .place-card .place-img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .place-card .place-content {
+            padding: 14px;
+        }
+
+        .place-card .place-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+            color: #2a2018;
+        }
+
+        .place-card .place-desc {
+            font-size: 13px;
+            color: #6b5d4f;
+        }
+
+        .place-card .place-distance {
+            font-size: 12px;
+            color: #1a8fc4;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        /* Cards sem imagem mantém padding direto */
+        .place-card:not(:has(.place-img)) {
+            padding: 14px;
+        }
+
+        .cta-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 12px 0;
+        }
+
+        .cta-button:active { opacity: 0.9; }
+
+        @media (min-width: 500px) {
+            body {
+                max-width: 500px;
+                margin: 0 auto;
+                box-shadow: 0 0 40px rgba(0,0,0,0.08);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="shell-deco">
+            <svg viewBox="0 0 24 24"><path d="M21 12c0-1.5-.5-2.8-1.3-3.8.5-1.2.7-2.5.3-3.9-.5-2-2.2-3.5-4.2-3.8-1.3-.2-2.5.1-3.5.8C11.8.8 11 .5 10 .5 7.8.5 6 2.3 6 4.5c0 .5.1 1 .3 1.5C4.3 7.2 3 9 3 11c0 2.5 1.8 4.5 4.2 4.9.3 2.3 2.3 4.1 4.8 4.1s4.5-1.8 4.8-4.1C19.2 15.5 21 13.5 21 11v1z"/></svg>
+            <svg viewBox="0 0 16 16" style="width:14px;height:14px;"><polygon points="8,1 10,6 15,6 11,9.5 12.5,14.5 8,11 3.5,14.5 5,9.5 1,6 6,6"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M21 12c0-1.5-.5-2.8-1.3-3.8.5-1.2.7-2.5.3-3.9-.5-2-2.2-3.5-4.2-3.8-1.3-.2-2.5.1-3.5.8C11.8.8 11 .5 10 .5 7.8.5 6 2.3 6 4.5c0 .5.1 1 .3 1.5C4.3 7.2 3 9 3 11c0 2.5 1.8 4.5 4.2 4.9.3 2.3 2.3 4.1 4.8 4.1s4.5-1.8 4.8-4.1C19.2 15.5 21 13.5 21 11v1z"/></svg>
+        </div>
+        <div class="line-deco"></div>
+        <h1>BOAS VINDAS!</h1>
+        <p class="subtitle">entre, relaxe e aproveite a estadia!</p>
+        <div class="wave">
+            <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+                <path d="M0,30 C240,50 480,10 720,30 C960,50 1200,10 1440,30 L1440,60 L0,60 Z" fill="#faf6f0"/>
+            </svg>
+        </div>
+    </div>
+
+    <div class="welcome-card">
+        <h2>Nosso cantinho de praia 🏖️</h2>
+        <p>Preparamos tudo com carinho para que você se sinta em casa. Aqui você encontra todas as informações para aproveitar ao máximo sua estadia!</p>
+    </div>
+
+    <div class="section-title">Essenciais</div>
+    <div class="grid">
+        <div class="grid-item" onclick="openModal('wifi')">
+            <span class="icon">📶</span>
+            <span class="label">Wi-Fi</span>
+        </div>
+        <div class="grid-item" onclick="openModal('regras')">
+            <span class="icon">📋</span>
+            <span class="label">Regras da Casa</span>
+        </div>
+        <div class="grid-item" onclick="openModal('contato')">
+            <span class="icon">📞</span>
+            <span class="label">Contato</span>
+        </div>
+    </div>
+
+    <div class="section-title">Explore</div>
+    <div class="grid">
+        <div class="grid-item" onclick="openModal('lazer')">
+            <span class="icon">🏊</span>
+            <span class="label">Lazer do Condomínio</span>
+        </div>
+        <div class="grid-item" onclick="openModal('recomendacoes')">
+            <span class="icon">🍽️</span>
+            <span class="label">Onde Comer</span>
+        </div>
+        <div class="grid-item" onclick="openModal('passeios')">
+            <span class="icon">🗺️</span>
+            <span class="label">Passeios</span>
+        </div>
+    </div>
+
+    <div class="section-title">Informações</div>
+    <div class="grid">
+        <div class="grid-item" onclick="openModal('checkin')">
+            <span class="icon">🔑</span>
+            <span class="label">Check-in / Checkout</span>
+        </div>
+        <div class="grid-item" onclick="openModal('estacionamento')">
+            <span class="icon">🚗</span>
+            <span class="label">Estacionamento</span>
+        </div>
+        <div class="grid-item" onclick="openModal('localizacao')">
+            <span class="icon">📍</span>
+            <span class="label">Localização</span>
+        </div>
+    </div>
+
+    <div class="review-card">
+        <h3>Sua avaliação é muito importante! ⭐</h3>
+        <p>Se você gostou da estadia, deixe uma avaliação. Ficaremos muito felizes em saber como foi sua experiência.</p>
+        <div class="stars">★ ★ ★ ★ ★</div>
+    </div>
+
+    <div class="footer">
+        <div class="shells">🐚 🌊 🐚</div>
+        Feito com ❤️ pela Catia<br>
+        Praia da Guilhermina, Praia Grande - SP
+    </div>
+
+    <!-- MODALS -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+        <div class="modal" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h3 id="modal-title"></h3>
+                <button class="modal-close" onclick="closeModalForce()">✕</button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <script>
+        const modals = {
+            wifi: {
+                title: 'Wi-Fi',
+                content: `
+                    <p>Conecte-se à nossa rede, disponível em todo o apartamento:</p>
+                    <div class="wifi-box">
+                        <div class="wifi-label">Rede</div>
+                        <div class="wifi-value" id="wifi-name">catiaoliver</div>
+                    </div>
+                    <div class="wifi-box">
+                        <div class="wifi-label">Senha</div>
+                        <div class="wifi-value" id="wifi-pass">20037104</div>
+                        <button class="copy-btn" onclick="copyWifi()">📋 Copiar senha</button>
+                    </div>
+                `
+            },
+            regras: {
+                title: 'Regras da Casa',
+                content: `
+                    <p>Para uma estadia agradável para todos:</p>
+                    <div class="rule-item">
+                        <span class="rule-icon">🔇</span>
+                        <span class="rule-text">Horário de silêncio das <strong>22h às 10h</strong>.</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">🚬</span>
+                        <span class="rule-text">Permitido fumar nas áreas externas.</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">🐾</span>
+                        <span class="rule-text">Animais de estimação são bem-vindos!</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">👥</span>
+                        <span class="rule-text">Capacidade máxima: <strong>8 hóspedes</strong>.</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">🎉</span>
+                        <span class="rule-text">Eventos permitidos (respeitar horário de silêncio).</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">🗑️</span>
+                        <span class="rule-text">Recolher o lixo do apartamento antes de sair.</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">❄️</span>
+                        <span class="rule-text">Desligar o ar-condicionado e luzes ao sair.</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">🔐</span>
+                        <span class="rule-text">Conferir se portas e janelas estão trancadas ao sair.</span>
+                    </div>
+                `
+            },
+            contato: {
+                title: 'Contato',
+                content: `
+                    <p>Se tiver alguma dúvida ou precisar de ajuda, não hesite em me contatar:</p>
+                    <a href="https://wa.me/5511975697885" class="cta-button" target="_blank">
+                        💬 Falar com a Catia no WhatsApp
+                    </a>
+                    <p style="text-align:center;color:#b8a48c;font-size:13px;margin-top:4px;">Respondemos rapidinho! 😊</p>
+                    <h4>Emergências</h4>
+                    <div class="rule-item">
+                        <span class="rule-icon">🚨</span>
+                        <span class="rule-text">SAMU: <strong>192</strong></span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">🚒</span>
+                        <span class="rule-text">Bombeiros: <strong>193</strong></span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">👮</span>
+                        <span class="rule-text">Polícia: <strong>190</strong></span>
+                    </div>
+                `
+            },
+            lazer: {
+                title: 'Lazer do Condomínio',
+                content: `
+                    <h4>Piscinas</h4>
+                    <div class="place-card">
+                        <div class="place-name">🏊 Piscina Aquecida (coberta)</div>
+                        <div class="place-desc">Disponível o ano todo, perfeita para dias frios ou chuvosos.</div>
+                    </div>
+                    <div class="place-card">
+                        <div class="place-name">☀️ Piscina Descoberta</div>
+                        <div class="place-desc">Ao ar livre, ideal para curtir os dias de sol.</div>
+                    </div>
+                    <h4>Bem-estar</h4>
+                    <div class="place-card">
+                        <div class="place-name">🧖 Sauna</div>
+                        <div class="place-desc">Perfeita para relaxar após um dia de praia.</div>
+                    </div>
+                    <div class="place-card">
+                        <div class="place-name">💪 Academia</div>
+                        <div class="place-desc">Equipamentos de musculação e cardio.</div>
+                    </div>
+                    <h4>Diversão</h4>
+                    <div class="place-card">
+                        <div class="place-name">🎱 Salão de Jogos</div>
+                        <div class="place-desc">Sinuca, ping pong e pebolim para toda a família.</div>
+                    </div>
+                    <div class="place-card">
+                        <div class="place-name">🧸 Brinquedoteca e Playground</div>
+                        <div class="place-desc">Espaço seguro e divertido para os pequenos.</div>
+                    </div>
+                    <h4>Churrasqueira</h4>
+                    <div class="place-card">
+                        <div class="place-name">🔥 Churrasqueira</div>
+                        <div class="place-desc">Disponível na área comum. Reservar na portaria (custo à parte).</div>
+                    </div>
+                `
+            },
+            recomendacoes: {
+                title: 'Onde Comer',
+                content: `
+                    <h4>No Shopping Litoral Plaza</h4>
+                    <div class="place-card">
+                        <img class="place-img" src="img/hardrock.jpg" alt="Hard Rock Cafe" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">🎸 Hard Rock Cafe Praia Grande</div>
+                            <div class="place-desc">Hambúrgueres, pratos americanos, coquetéis e cardápio infantil. Ambiente animado! R$ 80-200.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c53ea75d47f:0xebed7380dc247256" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Litoral Plaza Shopping — ver no mapa</a></div>
+                        </div>
+                    </div>
+                    <div class="place-card">
+                        <div class="place-name">🍺 Quiosque Chopp Brahma</div>
+                        <div class="place-desc">Chopp gelado e petiscos no shopping.</div>
+                        <div class="place-distance">📍 Shopping Litoral Plaza</div>
+                    </div>
+                    <h4>Fast Food</h4>
+                    <div class="place-card">
+                        <img class="place-img" src="img/mcdonalds.jpg" alt="McDonald's Guilhermina" onerror="this.style.display='none'">
+                        <div class="place-name">🍔 McDonald's Guilhermina</div>
+                        <div class="place-desc">O mais perto! Cardápio infantil e mesas externas. Aberto até 5h. R$ 20-60.</div>
+                        <div class="place-distance"><a href="https://maps.google.com/?q=McDonalds+Guilhermina+Praia+Grande+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Av. Pres. Kennedy, 2600 — ver no mapa</a></div>
+                    </div>
+                    <h4>Japonês</h4>
+                    <div class="place-card">
+                        <img class="place-img" src="img/nayumi.jpg" alt="Nayumi Sushi" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">🍣 Nayumi Sushi</div>
+                            <div class="place-desc">Sushi excelente no Boqueirão. Muito bem avaliado!</div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d616b6b8405:0xd132280ef582bf37" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Ver no mapa</a></div>
+                        </div>
+                    </div>
+                    <h4>Na região</h4>
+                    <div class="place-card">
+                        <div class="place-name">🎪 Feirinha da Guilhermina</div>
+                        <div class="place-desc">Comidas típicas, artesanato e lembranças. Imperdível!</div>
+                        <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d3b2173f925:0xe1003aac13e43cf" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 3 min a pé — ver no mapa</a></div>
+                    </div>
+                    <h4>Experiência especial</h4>
+                    <div class="place-card">
+                        <img class="place-img" src="img/revo.jpg" alt="Revo Manufactory" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">✨ Revo Manufactory</div>
+                            <div class="place-desc">Lugar incrível em Santos. Vale o passeio! Av. Dr. Epitácio Pessoa, 737 - Ponta da Praia.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=Revo+Manufactory+Santos+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Santos — ver no mapa</a></div>
+                        </div>
+                    </div>
+                    <h4>Mercados e Carnes</h4>
+                    <div class="place-card">
+                        <img class="place-img" src="img/swift.jpg" alt="Swift Guilhermina" onerror="this.style.display='none'">
+                        <div class="place-name">🥩 Swift - Guilhermina</div>
+                        <div class="place-desc">Carnes de qualidade, frios e congelados. Pertinho do apartamento! Abre às 8h.</div>
+                        <div class="place-distance"><a href="https://maps.google.com/?q=Swift+Guilhermina+Praia+Grande+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Av. Pres. Kennedy, 2141 — ver no mapa</a></div>
+                    </div>
+                    <div class="place-card">
+                        <img class="place-img" src="img/assai.jpg" alt="Assaí Atacadista" onerror="this.style.display='none'">
+                        <div class="place-name">🛒 Assaí Atacadista</div>
+                        <div class="place-desc">Compras em grande quantidade com preço baixo. Abre às 7h.</div>
+                        <div class="place-distance"><a href="https://maps.google.com/?q=Assai+Atacadista+Gloria+Praia+Grande+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Av. Min. Marcos Freire — ver no mapa</a></div>
+                    </div>
+                    <h4>🍻 Av. Mallet — Rua dos Bares</h4>
+                    <p style="margin-bottom:10px;font-size:13px;color:#6b5d4f;">A avenida mais famosa da noite de Praia Grande! Drinks, música e muita diversão.</p>
+                    <div class="place-card">
+                        <img class="place-img" src="img/av-mallet.jpg" alt="Av. Mallet - Rua dos Bares" onerror="this.style.display='none'">
+                        <div class="place-name">⭐ Vixe Bar Mallet</div>
+                        <div class="place-desc">Nota 4,8 — Drinks e porções impecáveis. O mais bem avaliado! R$ 40-140.</div>
+                    </div>
+                    <div class="place-card">
+                        <div class="place-name">⭐ Wall Street Bar</div>
+                        <div class="place-desc">Nota 4,8 — Porções de frango, costelinha barbecue e hambúrgueres. R$ 40-60.</div>
+                    </div>
+                    <div class="place-card">
+                        <div class="place-name">🍸 Barzin da Praia</div>
+                        <div class="place-desc">Drinks maravilhosos, música ao vivo e ambiente incrível. R$ 40-160.</div>
+                    </div>
+                    <div class="place-card">
+                        <div class="place-name">🍺 Matilde Bar</div>
+                        <div class="place-desc">Cerveja gelada, drinks e porções muito bons. R$ 60-160.</div>
+                    </div>
+                    <div class="place-distance" style="text-align:center;margin-top:8px;"><a href="https://maps.google.com/?q=Av+Mal+Mallet+Praia+Grande+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Ver Av. Mallet no mapa</a></div>
+                    <p style="margin-top:16px;color:#b8a48c;font-size:13px;">💡 Pergunte à Catia! Ela tem as melhores dicas da região.</p>
+                `
+            },
+            passeios: {
+                title: 'Passeios',
+                content: `
+                    <h4>Na porta</h4>
+                    <div class="place-card">
+                        <div class="place-name">🏖️ Praia da Guilhermina</div>
+                        <div class="place-desc">Pé na areia de verdade! Saindo do prédio você já está na praia.</div>
+                        <div class="place-distance">📍 0 min — na porta!</div>
+                    </div>
+                    <h4>A pé</h4>
+                    <div class="place-card">
+                        <div class="place-name">🎪 Feirinha da Guilhermina</div>
+                        <div class="place-desc">Artesanato, comidas típicas e lembranças.</div>
+                        <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d3b2173f925:0xe1003aac13e43cf" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 3 min a pé — ver no mapa</a></div>
+                    </div>
+                    <h4>De carro</h4>
+                    <div class="place-card">
+                        <div class="place-name">🛍️ Shopping Litoral Plaza</div>
+                        <div class="place-desc">Cinema, Hard Rock, Chopp Brahma, mercado, lojas e praça de alimentação.</div>
+                        <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c53ea75d47f:0xebed7380dc247256" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 9 min de carro — ver no mapa</a></div>
+                    </div>
+                    <div class="place-card">
+                        <div class="place-name">🎭 Palácio das Artes</div>
+                        <div class="place-desc">Teatro, shows e atrações culturais.</div>
+                        <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c4dc39a3269:0x8086c1722e43fc06" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Ver no mapa</a></div>
+                    </div>
+                    <div class="place-card">
+                        <div class="place-name">🏙️ Centro (Boqueirão)</div>
+                        <div class="place-desc">Comércio, bancos e serviços.</div>
+                        <div class="place-distance">📍 5 min de carro</div>
+                    </div>
+                    <h4>Cachoeiras 🌿</h4>
+                    <div class="place-card">
+                        <img class="place-img" src="img/lagoa-azul.jpg" alt="Cachoeira da Lagoa Azul" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">💧 Cachoeira da Lagoa Azul</div>
+                            <div class="place-desc">Trilha incrível com lagoa de águas cristalinas em Cubatão. Aberta 24h.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=Cachoeira+da+Lagoa+Azul+Cubatao+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Cubatão — ver no mapa</a></div>
+                        </div>
+                    </div>
+                    <div class="place-card">
+                        <img class="place-img" src="img/cachoeira-gleba.jpg" alt="Cachoeira Gleba" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">💧 Cachoeira Gleba</div>
+                            <div class="place-desc">Cachoeira com água verde esmeralda. Aberta 24h. Nota 4,5 no Google.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=Cachoeira+Gleba+Praia+Grande+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Praia Grande — ver no mapa</a></div>
+                        </div>
+                    </div>
+                    <div class="place-card">
+                        <img class="place-img" src="img/serra-do-mar.jpg" alt="Parque Estadual Serra do Mar" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">🌳 Parque Estadual Serra do Mar</div>
+                            <div class="place-desc">Base Guariúma. Trilhas, cachoeiras, piqueniques e ciclofaixas. Abre às 9h.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=Parque+Estadual+Serra+do+Mar+Base+Guariuma+Praia+Grande" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Praia Grande — ver no mapa</a></div>
+                        </div>
+                    </div>
+                `
+            },
+            checkin: {
+                title: 'Check-in / Checkout',
+                content: `
+                    <h4>Check-in</h4>
+                    <div class="rule-item">
+                        <span class="rule-icon">🕐</span>
+                        <span class="rule-text">Chegada entre <strong>12h e horário flexível</strong>.</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">🏢</span>
+                        <span class="rule-text">Apresente-se na portaria com documento de identificação.</span>
+                    </div>
+                    <h4>Checkout</h4>
+                    <div class="rule-item">
+                        <span class="rule-icon">🕕</span>
+                        <span class="rule-text">Saída até as <strong>18h</strong>.</span>
+                    </div>
+                    <h4>Antes de sair</h4>
+                    <ul>
+                        <li>Recolher o lixo do apartamento</li>
+                        <li>Desligar o ar-condicionado</li>
+                        <li>Apagar as luzes</li>
+                        <li>Fechar portas e janelas</li>
+                        <li>Conferir se está tudo ok</li>
+                    </ul>
+                `
+            },
+            estacionamento: {
+                title: 'Estacionamento',
+                content: `
+                    <div class="place-card">
+                        <div class="place-name">🅿️ 1 vaga gratuita inclusa</div>
+                        <div class="place-desc">Estacionamento no condomínio. Ao chegar, informe-se na portaria sobre a vaga disponível.</div>
+                    </div>
+                    <p style="color:#b8a48c;font-size:13px;margin-top:12px;">⚠️ Apenas 1 veículo por reserva.</p>
+                `
+            },
+            localizacao: {
+                title: 'Localização',
+                content: `
+                    <h4>Endereço</h4>
+                    <div class="place-card">
+                        <div class="place-name">📍 Alameda das Americas, 34</div>
+                        <div class="place-desc">Apto 31 C — Guilhermina, Praia Grande - SP</div>
+                    </div>
+                    <a href="https://maps.google.com/?q=Alameda+das+Americas+34+Guilhermina+Praia+Grande+SP" class="cta-button" target="_blank" style="background:#4285f4;">
+                        🗺️ Abrir no Google Maps
+                    </a>
+                    <h4>Como chegar</h4>
+                    <div class="rule-item">
+                        <span class="rule-icon">🚗</span>
+                        <span class="rule-text">De São Paulo: Via Anchieta/Imigrantes, ~1h30 sem trânsito.</span>
+                    </div>
+                    <div class="rule-item">
+                        <span class="rule-icon">🏖️</span>
+                        <span class="rule-text">O prédio fica de frente para o mar na Praia da Guilhermina.</span>
+                    </div>
+                `
+            }
+        };
+
+        function openModal(key) {
+            const m = modals[key];
+            document.getElementById('modal-title').textContent = m.title;
+            document.getElementById('modal-body').innerHTML = m.content;
+            document.getElementById('modal-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(e) {
+            if (e.target === document.getElementById('modal-overlay')) closeModalForce();
+        }
+
+        function closeModalForce() {
+            document.getElementById('modal-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function copyWifi() {
+            const pass = document.getElementById('wifi-pass').textContent;
+            navigator.clipboard.writeText(pass).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '✅ Copiado!';
+                setTimeout(() => btn.textContent = '📋 Copiar senha', 2000);
+            });
+        }
+
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModalForce(); });
+    </script>
+</body>
+</html>
