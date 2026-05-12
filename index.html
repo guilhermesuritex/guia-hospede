@@ -153,9 +153,20 @@
         }
 
         .grid-item .icon {
-            font-size: 30px;
             margin-bottom: 8px;
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-item .icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: #2a2018;
+            stroke-width: 1.5;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .grid-item .label {
@@ -443,9 +454,9 @@
 
     <div class="header">
         <div class="shell-deco">
-            <svg viewBox="0 0 24 24"><path d="M21 12c0-1.5-.5-2.8-1.3-3.8.5-1.2.7-2.5.3-3.9-.5-2-2.2-3.5-4.2-3.8-1.3-.2-2.5.1-3.5.8C11.8.8 11 .5 10 .5 7.8.5 6 2.3 6 4.5c0 .5.1 1 .3 1.5C4.3 7.2 3 9 3 11c0 2.5 1.8 4.5 4.2 4.9.3 2.3 2.3 4.1 4.8 4.1s4.5-1.8 4.8-4.1C19.2 15.5 21 13.5 21 11v1z"/></svg>
-            <svg viewBox="0 0 16 16" style="width:14px;height:14px;"><polygon points="8,1 10,6 15,6 11,9.5 12.5,14.5 8,11 3.5,14.5 5,9.5 1,6 6,6"/></svg>
-            <svg viewBox="0 0 24 24"><path d="M21 12c0-1.5-.5-2.8-1.3-3.8.5-1.2.7-2.5.3-3.9-.5-2-2.2-3.5-4.2-3.8-1.3-.2-2.5.1-3.5.8C11.8.8 11 .5 10 .5 7.8.5 6 2.3 6 4.5c0 .5.1 1 .3 1.5C4.3 7.2 3 9 3 11c0 2.5 1.8 4.5 4.2 4.9.3 2.3 2.3 4.1 4.8 4.1s4.5-1.8 4.8-4.1C19.2 15.5 21 13.5 21 11v1z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M4 20 C4 20 4 12 12 4 C14 6 15 8 15 12 C15 16 12 20 4 20z" fill="none" stroke="#c9a96e" stroke-width="1"/><path d="M4 20 C8 18 10 15 11 12 C12 9 12 6 12 4" fill="none" stroke="#c9a96e" stroke-width="0.7"/><path d="M4 20 C7 19 9 17 10 15" fill="none" stroke="#c9a96e" stroke-width="0.5"/></svg>
+            <svg viewBox="0 0 16 16" style="width:10px;height:10px;"><circle cx="8" cy="8" r="2" fill="#c9a96e" stroke="none"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M20 20 C20 20 20 12 12 4 C10 6 9 8 9 12 C9 16 12 20 20 20z" fill="none" stroke="#c9a96e" stroke-width="1"/><path d="M20 20 C16 18 14 15 13 12 C12 9 12 6 12 4" fill="none" stroke="#c9a96e" stroke-width="0.7"/><path d="M20 20 C17 19 15 17 14 15" fill="none" stroke="#c9a96e" stroke-width="0.5"/></svg>
         </div>
         <div class="line-deco"></div>
         <h1>BOAS VINDAS!</h1>
@@ -465,15 +476,15 @@
     <div class="section-title">Essenciais</div>
     <div class="grid">
         <div class="grid-item" onclick="openModal('wifi')">
-            <span class="icon">📶</span>
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#2a2018" stroke="none"/></svg></span>
             <span class="label">Wi-Fi</span>
         </div>
         <div class="grid-item" onclick="openModal('regras')">
-            <span class="icon">📋</span>
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="15" y2="14"/><line x1="9" y1="18" x2="13" y2="18"/></svg></span>
             <span class="label">Regras da Casa</span>
         </div>
         <div class="grid-item" onclick="openModal('contato')">
-            <span class="icon">📞</span>
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
             <span class="label">Contato</span>
         </div>
     </div>
@@ -481,15 +492,15 @@
     <div class="section-title">Explore</div>
     <div class="grid">
         <div class="grid-item" onclick="openModal('lazer')">
-            <span class="icon">🏊</span>
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M2 20c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/><path d="M2 16c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/><path d="M12 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M12 10v4"/></svg></span>
             <span class="label">Lazer do Condomínio</span>
         </div>
         <div class="grid-item" onclick="openModal('recomendacoes')">
-            <span class="icon">🍽️</span>
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><line x1="7" y1="2" x2="7" y2="22"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3"/><line x1="21" y1="15" x2="21" y2="22"/></svg></span>
             <span class="label">Onde Comer</span>
         </div>
         <div class="grid-item" onclick="openModal('passeios')">
-            <span class="icon">🗺️</span>
+            <span class="icon"><svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
             <span class="label">Passeios</span>
         </div>
     </div>
@@ -497,15 +508,15 @@
     <div class="section-title">Informações</div>
     <div class="grid">
         <div class="grid-item" onclick="openModal('checkin')">
-            <span class="icon">🔑</span>
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></span>
             <span class="label">Check-in / Checkout</span>
         </div>
         <div class="grid-item" onclick="openModal('estacionamento')">
-            <span class="icon">🚗</span>
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M5 17h14v-5l-2-5H7L5 12z"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/><line x1="5" y1="12" x2="19" y2="12"/><line x1="5" y1="20" x2="5" y2="17"/><line x1="19" y1="20" x2="19" y2="17"/></svg></span>
             <span class="label">Estacionamento</span>
         </div>
         <div class="grid-item" onclick="openModal('localizacao')">
-            <span class="icon">📍</span>
+            <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <span class="label">Localização</span>
         </div>
     </div>
@@ -660,11 +671,6 @@
                             <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c53ea75d47f:0xebed7380dc247256" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Litoral Plaza Shopping — ver no mapa</a></div>
                         </div>
                     </div>
-                    <div class="place-card">
-                        <div class="place-name">🍺 Quiosque Chopp Brahma</div>
-                        <div class="place-desc">Chopp gelado e petiscos no shopping.</div>
-                        <div class="place-distance">📍 Shopping Litoral Plaza</div>
-                    </div>
                     <h4>Fast Food</h4>
                     <div class="place-card">
                         <img class="place-img" src="img/mcdonalds.jpg" alt="McDonald's Guilhermina" onerror="this.style.display='none'">
@@ -750,7 +756,7 @@
                     <h4>De carro</h4>
                     <div class="place-card">
                         <div class="place-name">🛍️ Shopping Litoral Plaza</div>
-                        <div class="place-desc">Cinema, Hard Rock, Chopp Brahma, mercado, lojas e praça de alimentação.</div>
+                        <div class="place-desc">Cinema, Hard Rock, mercado, lojas e praça de alimentação.</div>
                         <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c53ea75d47f:0xebed7380dc247256" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 9 min de carro — ver no mapa</a></div>
                     </div>
                     <div class="place-card">
