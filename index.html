@@ -36,7 +36,7 @@
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, #d4a853, #1a8fc4, #d4a853);
+            background: linear-gradient(90deg, #d4a853, #c9a96e, #d4a853);
         }
 
         .header .shell-deco {
@@ -292,7 +292,7 @@
             font-size: 14px;
             font-weight: 700;
             margin: 20px 0 10px;
-            color: #1a8fc4;
+            color: #b8860b;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
@@ -343,13 +343,13 @@
         .wifi-box .wifi-value {
             font-size: 22px;
             font-weight: 700;
-            color: #1a8fc4;
+            color: #b8860b;
             margin-top: 4px;
             user-select: all;
         }
 
         .copy-btn {
-            background: #1a8fc4;
+            background: #b8860b;
             color: white;
             border: none;
             border-radius: 10px;
@@ -384,7 +384,7 @@
         .place-card {
             background: white;
             border-radius: 12px;
-            margin-bottom: 10px;
+            margin-bottom: 14px;
             border: 1px solid #f0e8dc;
             overflow: hidden;
         }
@@ -414,7 +414,7 @@
 
         .place-card .place-distance {
             font-size: 12px;
-            color: #1a8fc4;
+            color: #b8860b;
             font-weight: 600;
             margin-top: 6px;
         }
@@ -497,7 +497,7 @@
         </div>
         <div class="grid-item" onclick="openModal('recomendacoes')">
             <span class="icon"><svg viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><line x1="7" y1="2" x2="7" y2="22"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3"/><line x1="21" y1="15" x2="21" y2="22"/></svg></span>
-            <span class="label">Onde Comer</span>
+            <span class="label">Onde Ir</span>
         </div>
         <div class="grid-item" onclick="openModal('passeios')">
             <span class="icon"><svg viewBox="0 0 24 24"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
@@ -660,7 +660,7 @@
                 `
             },
             recomendacoes: {
-                title: 'Onde Comer',
+                title: 'Onde Ir',
                 content: `
                     <h4>No Shopping Litoral Plaza</h4>
                     <div class="place-card">
@@ -668,20 +668,23 @@
                         <div class="place-content">
                             <div class="place-name">🎸 Hard Rock Cafe Praia Grande</div>
                             <div class="place-desc">Hambúrgueres, pratos americanos, coquetéis e cardápio infantil. Ambiente animado! R$ 80-200.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c53ea75d47f:0xebed7380dc247256" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Litoral Plaza Shopping — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c53ea75d47f:0xebed7380dc247256" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Litoral Plaza Shopping — ver no mapa</a></div>
                         </div>
                     </div>
                     <div class="place-card">
-                        <div class="place-name">🍺 Quiosque Chopp Brahma</div>
-                        <div class="place-desc">Chopp gelado, petiscos e ambiente descontraído no Shopping Litoral Plaza.</div>
-                        <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c53ea75d47f:0xebed7380dc247256" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Litoral Plaza Shopping — ver no mapa</a></div>
+                        <img class="place-img" src="img/chopp-brahma.jpg" alt="Quiosque Chopp Brahma" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">🍺 Quiosque Chopp Brahma</div>
+                            <div class="place-desc">Nota 4,5 — Chopp gelado, petiscos e ambiente descontraído. R$ 40-60.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1da5c3d3a275:0x6b54cc8524f0ef56" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Litoral Plaza Shopping — ver no mapa</a></div>
+                        </div>
                     </div>
                     <h4>Fast Food</h4>
                     <div class="place-card">
                         <img class="place-img" src="img/mcdonalds.jpg" alt="McDonald's Guilhermina" onerror="this.style.display='none'">
                         <div class="place-name">🍔 McDonald's Guilhermina</div>
                         <div class="place-desc">O mais perto! Cardápio infantil e mesas externas. Aberto até 5h. R$ 20-60.</div>
-                        <div class="place-distance"><a href="https://maps.google.com/?q=McDonalds+Guilhermina+Praia+Grande+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Av. Pres. Kennedy, 2600 — ver no mapa</a></div>
+                        <div class="place-distance"><a href="https://maps.google.com/?q=McDonalds+Guilhermina+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Pres. Kennedy, 2600 — ver no mapa</a></div>
                     </div>
                     <h4>Japonês</h4>
                     <div class="place-card">
@@ -689,7 +692,7 @@
                         <div class="place-content">
                             <div class="place-name">🍣 Nayumi Sushi</div>
                             <div class="place-desc">Sushi excelente no Boqueirão. Muito bem avaliado!</div>
-                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d616b6b8405:0xd132280ef582bf37" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d616b6b8405:0xd132280ef582bf37" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Ver no mapa</a></div>
                         </div>
                     </div>
                     <h4>Na região</h4>
@@ -698,7 +701,7 @@
                         <div class="place-content">
                             <div class="place-name">🎪 Feirinha da Guilhermina</div>
                             <div class="place-desc">Comidas típicas, artesanato e lembranças. Imperdível! Sex, sáb, dom e feriados das 16h às 22h. Na temporada (dez-fev) funciona todos os dias!</div>
-                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d3b2173f925:0xe1003aac13e43cf" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 3 min a pé — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d3b2173f925:0xe1003aac13e43cf" target="_blank" style="color:#b8860b;text-decoration:none;">📍 3 min a pé — ver no mapa</a></div>
                         </div>
                     </div>
                     <h4>Pizzarias</h4>
@@ -707,7 +710,7 @@
                         <div class="place-content">
                             <div class="place-name">🍕 TRE Duarte Pizzaria</div>
                             <div class="place-desc">Pizzaria muito bem avaliada! Nota 4,3 com 676 avaliações. Delivery e retirada. R$ 20-100.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1ef38a157509:0xbe59e172d39eaf9e" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 R. Tupi, 900 - Vila Tupi — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1ef38a157509:0xbe59e172d39eaf9e" target="_blank" style="color:#b8860b;text-decoration:none;">📍 R. Tupi, 900 - Vila Tupi — ver no mapa</a></div>
                         </div>
                     </div>
                     <div class="place-card">
@@ -715,7 +718,7 @@
                         <div class="place-content">
                             <div class="place-name">🍕 Pizzaria Big Bug</div>
                             <div class="place-desc">Nota 4,7 com 473 avaliações! Refeição no local, delivery e retirada. R$ 20-60. Tel: (13) 3491-2821.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c32a1e8c339:0x635e098304ec0b26" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 R. Haiti, 765 - Guilhermina — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c32a1e8c339:0x635e098304ec0b26" target="_blank" style="color:#b8860b;text-decoration:none;">📍 R. Haiti, 765 - Guilhermina — ver no mapa</a></div>
                         </div>
                     </div>
                     <h4>Cafeteria</h4>
@@ -724,7 +727,7 @@
                         <div class="place-content">
                             <div class="place-name">🍰 Milly's Cakes</div>
                             <div class="place-desc">Nota 4,8 com 1.134 avaliações! Bolos, doces e cafés no Boqueirão. R$ 20-40.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d72296f8bdf:0x2b989c493981e5d4" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 R. Mocóca, 227 - Boqueirão — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d72296f8bdf:0x2b989c493981e5d4" target="_blank" style="color:#b8860b;text-decoration:none;">📍 R. Mocóca, 227 - Boqueirão — ver no mapa</a></div>
                         </div>
                     </div>
                     <h4>Sushi Delivery</h4>
@@ -732,7 +735,7 @@
                         <div class="place-content">
                             <div class="place-name">🍣 Kakkoi Sushi Bar</div>
                             <div class="place-desc">Sushi delivery na região! Peça pelo Instagram.</div>
-                            <div class="place-distance"><a href="https://www.instagram.com/kakkoisushibar/" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Ver no Instagram</a></div>
+                            <div class="place-distance"><a href="https://www.instagram.com/kakkoisushibar/" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Ver no Instagram</a></div>
                         </div>
                     </div>
                     <h4>Restaurante Brasileiro</h4>
@@ -741,7 +744,7 @@
                         <div class="place-content">
                             <div class="place-name">🍽️ Restaurante Pernambuquinhos</div>
                             <div class="place-desc">Comida nordestina nota 4,6 com 573 avaliações! Refeição no local, retirada e delivery. R$ 20-40.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c33060d5743:0x26f37a8b875432a4" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Av. Pres. Kennedy, 1871 - Guilhermina — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c33060d5743:0x26f37a8b875432a4" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Pres. Kennedy, 1871 - Guilhermina — ver no mapa</a></div>
                         </div>
                     </div>
                     <div class="place-card">
@@ -749,7 +752,7 @@
                         <div class="place-content">
                             <div class="place-name">🍛 Quentinha de Ouro</div>
                             <div class="place-desc">Nota 4,4 — Marmitas e refeições caseiras. Delivery e retirada. R$ 20-40. Tel: (13) 3481-2161.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d7f73a9737b:0xa9de35aee08bb683" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 R. Dr. Júlio de Mesquita Filho, 657 - Aviação — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d7f73a9737b:0xa9de35aee08bb683" target="_blank" style="color:#b8860b;text-decoration:none;">📍 R. Dr. Júlio de Mesquita Filho, 657 - Aviação — ver no mapa</a></div>
                         </div>
                     </div>
                     <h4>Padaria</h4>
@@ -758,7 +761,7 @@
                         <div class="place-content">
                             <div class="place-name">🥐 Padaria Boa Praça II</div>
                             <div class="place-desc">A melhor padaria perto do prédio! Nota 4,4 com quase 5 mil avaliações. Lanches, cafés, bolos e salgados. R$ 20-40.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1dd22382d59b:0x80e18fef4e69a0c9" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 R. Nicarágua, 133 - Guilhermina — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1dd22382d59b:0x80e18fef4e69a0c9" target="_blank" style="color:#b8860b;text-decoration:none;">📍 R. Nicarágua, 133 - Guilhermina — ver no mapa</a></div>
                         </div>
                     </div>
                     <h4>Experiência especial</h4>
@@ -767,7 +770,7 @@
                         <div class="place-content">
                             <div class="place-name">✨ Revo Manufactory</div>
                             <div class="place-desc">Lugar incrível em Santos. Vale o passeio! Av. Dr. Epitácio Pessoa, 737 - Ponta da Praia.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/?q=Revo+Manufactory+Santos+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Santos — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=Revo+Manufactory+Santos+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Santos — ver no mapa</a></div>
                         </div>
                     </div>
                     <h4>Mercados e Carnes</h4>
@@ -775,34 +778,40 @@
                         <img class="place-img" src="img/swift.jpg" alt="Swift Guilhermina" onerror="this.style.display='none'">
                         <div class="place-name">🥩 Swift - Guilhermina</div>
                         <div class="place-desc">Carnes de qualidade, frios e congelados. Pertinho do apartamento! Abre às 8h.</div>
-                        <div class="place-distance"><a href="https://maps.google.com/?q=Swift+Guilhermina+Praia+Grande+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Av. Pres. Kennedy, 2141 — ver no mapa</a></div>
+                        <div class="place-distance"><a href="https://maps.google.com/?q=Swift+Guilhermina+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Pres. Kennedy, 2141 — ver no mapa</a></div>
                     </div>
                     <div class="place-card">
                         <img class="place-img" src="img/assai.jpg" alt="Assaí Atacadista" onerror="this.style.display='none'">
                         <div class="place-name">🛒 Assaí Atacadista</div>
                         <div class="place-desc">Compras em grande quantidade com preço baixo. Abre às 7h.</div>
-                        <div class="place-distance"><a href="https://maps.google.com/?q=Assai+Atacadista+Gloria+Praia+Grande+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Av. Min. Marcos Freire — ver no mapa</a></div>
+                        <div class="place-distance"><a href="https://maps.google.com/?q=Assai+Atacadista+Gloria+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Min. Marcos Freire — ver no mapa</a></div>
                     </div>
                     <h4>🍻 Av. Mallet — Rua dos Bares</h4>
-                    <p style="margin-bottom:10px;font-size:13px;color:#6b5d4f;">A avenida mais famosa da noite de Praia Grande! Drinks, música e muita diversão.</p>
+                    <p style="margin-bottom:10px;font-size:13px;color:#6b5d4f;">A avenida mais famosa da noite de Praia Grande! Cheia de bares, drinks, música ao vivo e muita diversão.</p>
                     <div class="place-card">
                         <img class="place-img" src="img/av-mallet.jpg" alt="Av. Mallet - Rua dos Bares" onerror="this.style.display='none'">
                         <div class="place-name">⭐ Vixe Bar Mallet</div>
                         <div class="place-desc">Nota 4,8 — Drinks e porções impecáveis. O mais bem avaliado! R$ 40-140.</div>
                     </div>
                     <div class="place-card">
-                        <div class="place-name">⭐ Wall Street Bar</div>
-                        <div class="place-desc">Nota 4,8 — Porções de frango, costelinha barbecue e hambúrgueres. R$ 40-60.</div>
+                        <img class="place-img" src="img/wallstreet.jpg" alt="Wall Street Bar" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">⭐ Wall Street Bar</div>
+                            <div class="place-desc">Nota 4,8 com 8 mil avaliações! Porções, costelinha barbecue e hambúrgueres. R$ 40-60.</div>
+                        </div>
                     </div>
                     <div class="place-card">
-                        <div class="place-name">🍸 Barzin da Praia</div>
-                        <div class="place-desc">Drinks maravilhosos, música ao vivo e ambiente incrível. R$ 40-160.</div>
+                        <img class="place-img" src="img/barzin.jpg" alt="Barzin da Praia" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">🍸 Barzin da Praia</div>
+                            <div class="place-desc">Nota 4,3 com 1 mil avaliações! Drinks, porções e coquetéis. Mezanino e mesas externas. R$ 40-160.</div>
+                        </div>
                     </div>
                     <div class="place-card">
                         <div class="place-name">🍺 Matilde Bar</div>
                         <div class="place-desc">Cerveja gelada, drinks e porções muito bons. R$ 60-160.</div>
                     </div>
-                    <div class="place-distance" style="text-align:center;margin-top:8px;"><a href="https://maps.google.com/?q=Av+Mal+Mallet+Praia+Grande+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Ver Av. Mallet no mapa</a></div>
+                    <div class="place-distance" style="text-align:center;margin-top:8px;"><a href="https://maps.google.com/?q=Av+Mal+Mallet+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Ver Av. Mallet no mapa</a></div>
                     <p style="margin-top:16px;color:#b8a48c;font-size:13px;">💡 Pergunte à Catia! Ela tem as melhores dicas da região.</p>
                 `
             },
@@ -821,19 +830,19 @@
                         <div class="place-content">
                             <div class="place-name">🎪 Feirinha da Guilhermina</div>
                             <div class="place-desc">Artesanato, comidas típicas e lembranças. Sex, sáb, dom e feriados das 16h às 22h. Na temporada (dez-fev) funciona todos os dias!</div>
-                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d3b2173f925:0xe1003aac13e43cf" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 3 min a pé — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d3b2173f925:0xe1003aac13e43cf" target="_blank" style="color:#b8860b;text-decoration:none;">📍 3 min a pé — ver no mapa</a></div>
                         </div>
                     </div>
                     <h4>De carro</h4>
                     <div class="place-card">
                         <div class="place-name">🛍️ Shopping Litoral Plaza</div>
                         <div class="place-desc">Cinema, Hard Rock, mercado, lojas e praça de alimentação.</div>
-                        <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c53ea75d47f:0xebed7380dc247256" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 9 min de carro — ver no mapa</a></div>
+                        <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c53ea75d47f:0xebed7380dc247256" target="_blank" style="color:#b8860b;text-decoration:none;">📍 9 min de carro — ver no mapa</a></div>
                     </div>
                     <div class="place-card">
                         <div class="place-name">🎭 Palácio das Artes</div>
                         <div class="place-desc">Teatro, shows e atrações culturais.</div>
-                        <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c4dc39a3269:0x8086c1722e43fc06" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Ver no mapa</a></div>
+                        <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1c4dc39a3269:0x8086c1722e43fc06" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Ver no mapa</a></div>
                     </div>
                     <div class="place-card">
                         <div class="place-name">🏙️ Centro (Boqueirão)</div>
@@ -846,7 +855,7 @@
                         <div class="place-content">
                             <div class="place-name">💧 Cachoeira da Lagoa Azul</div>
                             <div class="place-desc">Trilha incrível com lagoa de águas cristalinas em Cubatão. Aberta 24h.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/?q=Cachoeira+da+Lagoa+Azul+Cubatao+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Cubatão — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=Cachoeira+da+Lagoa+Azul+Cubatao+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Cubatão — ver no mapa</a></div>
                         </div>
                     </div>
                     <div class="place-card">
@@ -854,7 +863,7 @@
                         <div class="place-content">
                             <div class="place-name">💧 Cachoeira Gleba</div>
                             <div class="place-desc">Cachoeira com água verde esmeralda. Aberta 24h. Nota 4,5 no Google.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/?q=Cachoeira+Gleba+Praia+Grande+SP" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Praia Grande — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=Cachoeira+Gleba+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Praia Grande — ver no mapa</a></div>
                         </div>
                     </div>
                     <div class="place-card">
@@ -862,7 +871,7 @@
                         <div class="place-content">
                             <div class="place-name">🌳 Parque Estadual Serra do Mar</div>
                             <div class="place-desc">Base Guariúma. Trilhas, cachoeiras, piqueniques e ciclofaixas. Abre às 9h.</div>
-                            <div class="place-distance"><a href="https://maps.google.com/?q=Parque+Estadual+Serra+do+Mar+Base+Guariuma+Praia+Grande" target="_blank" style="color:#1a8fc4;text-decoration:none;">📍 Praia Grande — ver no mapa</a></div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=Parque+Estadual+Serra+do+Mar+Base+Guariuma+Praia+Grande" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Praia Grande — ver no mapa</a></div>
                         </div>
                     </div>
                 `
