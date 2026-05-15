@@ -34,7 +34,24 @@
       "mcp__Claude_in_Chrome__find",
       "mcp__Claude_in_Chrome__navigate",
       "mcp__Claude_in_Chrome__tabs_close_mcp",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(curl -s -o bigbug.jpg \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAGO-nSliVR24F2Ko9JW5456HteKv7_-DBoLmQg8ZgAAUYokNjk9dFCYeroVPaRAcOU1sRj_RCY-mXzw3P8_wb-VO7th-1DGRa60QUDEi7N0SY4oMo4JkPzfpFhIgov52Q1a7FpuIg=w800-h400-k-no\")",
+      "Bash(curl -s -o quentinha-ouro.jpg \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAFUbgX0fwWBW-8zW7jHKgOWAhPFiCWuVwHNuGNRealJZJ4LjvGlx6Ryzh_oHeZilu3V6-VhImkzj6QM37uzMI3nxktWV99BYSwVUW4z5DCDRM2z7xZ_nBVufyUPGhAPAsZvi-HPjg=w800-h400-k-no\")",
+      "Bash(curl -s -o boa-praca.jpg \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAHtN7m3SFBQY9qdCT8EBGlmdBw0cDBUPCtaPFF77e2vncqLSfiIPDqVTUBAf-uNtbXfoeQWQd64KGLhUeEU-7Daclj5V8T4-EqQKuQ4L4Xp05ydBBbDITxH4CQuCHc4N6l2YSD8uA=w800-h400-k-no\")",
+      "Bash(curl -s -o pernambuquinhos.jpg \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAFYM0Qd3gEgwC0qQxmxrM-ztjQml1EolrXvjRdxwEsPFCwbqZB0hPL1e_cirf8IQi9l6325By47bIAtUfBWfklLiLPzkj4iQkN4tuzjKi6ZEeOomarlQyFom-XeYe2snGVuW1WokPLDOADh=w800-h400-k-no\")",
+      "Bash(magick feirinha.avif feirinha.jpg)",
+      "Bash(ffmpeg -i feirinha.avif feirinha.jpg -y)",
+      "Bash(python -c \"from PIL import Image; img=Image.open\\('feirinha.avif'\\); img.save\\('feirinha.jpg', quality=85\\)\")",
+      "Bash(python3 -c \"from PIL import Image; img=Image.open\\('feirinha.avif'\\); img.save\\('feirinha.jpg', quality=85\\)\")",
+      "Bash(curl -s -o chopp-brahma.jpg \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAGCNX6jLvCJRUL5g7A1vKIKHxrDj-7s-ukNsCsAS4kocaWC0O_1XDxuQh1OwiAzf2To0mbDQGPe0A-TfSD6Yk7PkpZYqrWsBvjkdEdXHJJUK_MWaf9SLr6b89_eqwO2n3uqUKF5Hw=w800-h400-k-no\")",
+      "Bash(curl -s -o wallstreet.jpg \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAE1eB78zvmh4EjVJX_-HZZOr5pJWKM5a_HZ4IVw0418zsiRIbWCLuNy_6op1YI-uOpvboLCgvmqPnx3XfQLduJwhZhJLGpsdsg7IlA9v23YvqzEw9BgBy3cL196jauth_p4XJarHX_bWWl4=w800-h400-k-no\")",
+      "Bash(curl -s -o barzin.jpg \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAHfWoj-1fwSdvm9Msm8co-sM5lHNltQ_2DidrgquqJ0hf4dATdMEAod4jtw2xfGoVLZLnnK8X5YK0wRs2FGfCSavLd-wC4_0IdELpbhoC9NZgtzJSfVc__cYSg7ltOy2ivPr2bN=w800-h400-k-no\")",
+      "Bash(ls -lt \"C:\\\\Users\\\\Guilherme\\\\Downloads\\\\\"*.{jpg,jpeg,png,avif,webp} 2>/dev/null | head -5)",
+      "Bash(python3 -c \"from PIL import Image; img=Image.open\\('C:/Users/Guilherme/Downloads/quiosque-chopp-brahma.webp'\\); img.save\\('chopp-brahma.jpg', quality=85\\)\")",
+      "Bash(curl -s -L -o img/matilde.jpg \"https://lh5.googleusercontent.com/p/AF1QipOgVxGKRb9TbkFDHFCzRKCBvcBaAPuBk6nCqFPs=w800-h400-k-no\")",
+      "Bash(curl -s -L -o img/matilde.jpg \"https://lh3.googleusercontent.com/gps-cs-s/APNQkAEPnwETMlzjwfm_lYJCz0pPsBCHIhDacNIl8xmB3GFbq1oKDIBQKP7wgexCM7Dy0Ql04wT1CmCKV7k-rvT2afz6AaAiO0piSsiwlSbrPSi5VVxqWfDGkuWL96iofNxsaQ1FyEFd=w800-h400-k-no\")",
+      "Bash(pip install *)",
+      "Bash(python3 -m pip install qrcode[pil])"
     ]
   }
 }

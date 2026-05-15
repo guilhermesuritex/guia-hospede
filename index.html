@@ -14,51 +14,26 @@
 
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            background: #faf6f0;
+            background: #f8f3ed url('img/bg.png') center top / 500px auto repeat-y;
             color: #3a3028;
-            min-height: 100vh;
             -webkit-font-smoothing: antialiased;
         }
 
         /* Header com visual de praia */
         .header {
-            background: #f5ebe0;
+            background: transparent;
             padding: 50px 20px 40px;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #d4a853, #c9a96e, #d4a853);
-        }
-
         .header .shell-deco {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 16px;
-        }
-
-        .header .shell-deco svg {
-            width: 24px;
-            height: 24px;
-            fill: #c9a96e;
-            opacity: 0.5;
+            display: none;
         }
 
         .header .line-deco {
-            width: 60px;
-            height: 1px;
-            background: #c9a96e;
-            margin: 0 auto 16px;
-            opacity: 0.5;
+            display: none;
         }
 
         .header h1 {
@@ -384,7 +359,7 @@
         .place-card {
             background: white;
             border-radius: 12px;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
             border: 1px solid #f0e8dc;
             overflow: hidden;
         }
@@ -424,6 +399,37 @@
             padding: 14px;
         }
 
+        /* Filtro de categorias */
+        .filter-bar {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+            position: sticky;
+            top: 0;
+            background: #faf6f0;
+            padding: 10px 0;
+            z-index: 10;
+        }
+        .filter-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1.5px solid #d4c5a9;
+            background: transparent;
+            font-size: 13px;
+            font-weight: 600;
+            color: #6b5d4f;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .filter-btn.active {
+            background: #2a2018;
+            color: #faf6f0;
+            border-color: #2a2018;
+        }
+        .category-section { transition: all 0.2s; }
+        .category-section.hidden { display: none; }
+
         .cta-button {
             display: flex;
             align-items: center;
@@ -440,6 +446,7 @@
         }
 
         .cta-button:active { opacity: 0.9; }
+
 
         @media (min-width: 500px) {
             body {
@@ -463,7 +470,7 @@
         <p class="subtitle">entre, relaxe e aproveite a estadia!</p>
         <div class="wave">
             <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
-                <path d="M0,30 C240,50 480,10 720,30 C960,50 1200,10 1440,30 L1440,60 L0,60 Z" fill="#faf6f0"/>
+                <path d="M0,30 C240,50 480,10 720,30 C960,50 1200,10 1440,30 L1440,60 L0,60 Z" fill="#f8f3ed"/>
             </svg>
         </div>
     </div>
@@ -473,7 +480,6 @@
         <p>Preparamos tudo com carinho para que você se sinta em casa. Aqui você encontra todas as informações para aproveitar ao máximo sua estadia!</p>
     </div>
 
-    <div class="section-title">Essenciais</div>
     <div class="grid">
         <div class="grid-item" onclick="openModal('wifi')">
             <span class="icon"><svg viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1" fill="#2a2018" stroke="none"/></svg></span>
@@ -489,7 +495,6 @@
         </div>
     </div>
 
-    <div class="section-title">Explore</div>
     <div class="grid">
         <div class="grid-item" onclick="openModal('lazer')">
             <span class="icon"><svg viewBox="0 0 24 24"><path d="M2 20c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/><path d="M2 16c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/><path d="M12 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/><path d="M12 10v4"/></svg></span>
@@ -505,7 +510,6 @@
         </div>
     </div>
 
-    <div class="section-title">Informações</div>
     <div class="grid">
         <div class="grid-item" onclick="openModal('checkin')">
             <span class="icon"><svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></span>
@@ -522,8 +526,8 @@
     </div>
 
     <div class="review-card">
-        <h3>Sua avaliação é muito importante! ⭐</h3>
-        <p>Se você gostou da estadia, deixe uma avaliação. Ficaremos muito felizes em saber como foi sua experiência.</p>
+        <h3>Avalie no Airbnb! ⭐</h3>
+        <p>Curtiu a estadia? Deixe sua avaliação lá no Airbnb — isso nos ajuda muito a receber mais hóspedes como você!</p>
         <div class="stars">★ ★ ★ ★ ★</div>
     </div>
 
@@ -606,7 +610,7 @@
                     <a href="https://wa.me/5511975697885" class="cta-button" target="_blank">
                         💬 Falar com a Catia no WhatsApp
                     </a>
-                    <p style="text-align:center;color:#b8a48c;font-size:13px;margin-top:4px;">Respondemos rapidinho! 😊</p>
+                    <p style="text-align:center;color:#b8a48c;font-size:13px;margin-top:4px;">Respondo rapidinho! 😊</p>
                     <h4>Emergências</h4>
                     <div class="rule-item">
                         <span class="rule-icon">🚨</span>
@@ -655,13 +659,21 @@
                     <h4>Churrasqueira</h4>
                     <div class="place-card">
                         <div class="place-name">🔥 Churrasqueira</div>
-                        <div class="place-desc">Disponível na área comum. Reservar na portaria (custo à parte).</div>
+                        <div class="place-desc">Disponível na área comum. Reservar (custo à parte).</div>
                     </div>
                 `
             },
             recomendacoes: {
                 title: 'Onde Ir',
                 content: `
+                    <div class="filter-bar">
+                        <button class="filter-btn active" onclick="filterCategory('todos')">Todos</button>
+                        <button class="filter-btn" onclick="filterCategory('comer')">🍽️ Comer</button>
+                        <button class="filter-btn" onclick="filterCategory('bares')">🍺 Bares</button>
+                        <button class="filter-btn" onclick="filterCategory('mercados')">🛒 Mercados</button>
+                        <button class="filter-btn" onclick="filterCategory('padaria')">🥐 Padaria</button>
+                    </div>
+                    <div class="category-section" data-cat="comer">
                     <h4>No Shopping Litoral Plaza</h4>
                     <div class="place-card">
                         <img class="place-img" src="img/hardrock.jpg" alt="Hard Rock Cafe" onerror="this.style.display='none'">
@@ -682,9 +694,11 @@
                     <h4>Fast Food</h4>
                     <div class="place-card">
                         <img class="place-img" src="img/mcdonalds.jpg" alt="McDonald's Guilhermina" onerror="this.style.display='none'">
-                        <div class="place-name">🍔 McDonald's Guilhermina</div>
-                        <div class="place-desc">O mais perto! Cardápio infantil e mesas externas. Aberto até 5h. R$ 20-60.</div>
-                        <div class="place-distance"><a href="https://maps.google.com/?q=McDonalds+Guilhermina+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Pres. Kennedy, 2600 — ver no mapa</a></div>
+                        <div class="place-content">
+                            <div class="place-name">🍔 McDonald's Guilhermina</div>
+                            <div class="place-desc">O mais perto! Cardápio infantil e mesas externas. Aberto até 5h. R$ 20-60.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=McDonalds+Guilhermina+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Pres. Kennedy, 2600 — ver no mapa</a></div>
+                        </div>
                     </div>
                     <h4>Japonês</h4>
                     <div class="place-card">
@@ -755,6 +769,8 @@
                             <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1d7f73a9737b:0xa9de35aee08bb683" target="_blank" style="color:#b8860b;text-decoration:none;">📍 R. Dr. Júlio de Mesquita Filho, 657 - Aviação — ver no mapa</a></div>
                         </div>
                     </div>
+                    </div>
+                    <div class="category-section" data-cat="padaria">
                     <h4>Padaria</h4>
                     <div class="place-card">
                         <img class="place-img" src="img/boa-praca.jpg" alt="Padaria Boa Praça II" onerror="this.style.display='none'">
@@ -764,6 +780,8 @@
                             <div class="place-distance"><a href="https://maps.google.com/maps?ftid=0x94ce1dd22382d59b:0x80e18fef4e69a0c9" target="_blank" style="color:#b8860b;text-decoration:none;">📍 R. Nicarágua, 133 - Guilhermina — ver no mapa</a></div>
                         </div>
                     </div>
+                    </div>
+                    <div class="category-section" data-cat="comer">
                     <h4>Experiência especial</h4>
                     <div class="place-card">
                         <img class="place-img" src="img/revo.jpg" alt="Revo Manufactory" onerror="this.style.display='none'">
@@ -773,31 +791,43 @@
                             <div class="place-distance"><a href="https://maps.google.com/?q=Revo+Manufactory+Santos+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Santos — ver no mapa</a></div>
                         </div>
                     </div>
+                    </div>
+                    <div class="category-section" data-cat="mercados">
                     <h4>Mercados e Carnes</h4>
                     <div class="place-card">
                         <img class="place-img" src="img/swift.jpg" alt="Swift Guilhermina" onerror="this.style.display='none'">
-                        <div class="place-name">🥩 Swift - Guilhermina</div>
-                        <div class="place-desc">Carnes de qualidade, frios e congelados. Pertinho do apartamento! Abre às 8h.</div>
-                        <div class="place-distance"><a href="https://maps.google.com/?q=Swift+Guilhermina+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Pres. Kennedy, 2141 — ver no mapa</a></div>
+                        <div class="place-content">
+                            <div class="place-name">🥩 Swift - Guilhermina</div>
+                            <div class="place-desc">Carnes de qualidade, frios e congelados. Pertinho do apartamento! Abre às 8h.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=Swift+Guilhermina+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Pres. Kennedy, 2141 — ver no mapa</a></div>
+                        </div>
                     </div>
                     <div class="place-card">
                         <img class="place-img" src="img/assai.jpg" alt="Assaí Atacadista" onerror="this.style.display='none'">
-                        <div class="place-name">🛒 Assaí Atacadista</div>
-                        <div class="place-desc">Compras em grande quantidade com preço baixo. Abre às 7h.</div>
-                        <div class="place-distance"><a href="https://maps.google.com/?q=Assai+Atacadista+Gloria+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Min. Marcos Freire — ver no mapa</a></div>
+                        <div class="place-content">
+                            <div class="place-name">🛒 Assaí Atacadista</div>
+                            <div class="place-desc">Compras em grande quantidade com preço baixo. Abre às 7h.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/?q=Assai+Atacadista+Gloria+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Min. Marcos Freire — ver no mapa</a></div>
+                        </div>
                     </div>
+                    </div>
+                    <div class="category-section" data-cat="bares">
                     <h4>🍻 Av. Mallet — Rua dos Bares</h4>
                     <p style="margin-bottom:10px;font-size:13px;color:#6b5d4f;">A avenida mais famosa da noite de Praia Grande! Cheia de bares, drinks, música ao vivo e muita diversão.</p>
                     <div class="place-card">
-                        <img class="place-img" src="img/av-mallet.jpg" alt="Av. Mallet - Rua dos Bares" onerror="this.style.display='none'">
-                        <div class="place-name">⭐ Vixe Bar Mallet</div>
-                        <div class="place-desc">Nota 4,8 — Drinks e porções impecáveis. O mais bem avaliado! R$ 40-140.</div>
+                        <img class="place-img" src="img/av-mallet.jpg" alt="Vixe Bar Mallet" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">⭐ Vixe Bar Mallet</div>
+                            <div class="place-desc">Nota 4,8 — Drinks e porções impecáveis. O mais bem avaliado! R$ 40-140.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?q=Vixe+Bar+Mallet+Praia+Grande" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Mal. Mallet, 1155 — ver no mapa</a></div>
+                        </div>
                     </div>
                     <div class="place-card">
                         <img class="place-img" src="img/wallstreet.jpg" alt="Wall Street Bar" onerror="this.style.display='none'">
                         <div class="place-content">
                             <div class="place-name">⭐ Wall Street Bar</div>
                             <div class="place-desc">Nota 4,8 com 8 mil avaliações! Porções, costelinha barbecue e hambúrgueres. R$ 40-60.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?q=Wall+Street+Bar+Praia+Grande" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Mal. Mallet, 1627 — ver no mapa</a></div>
                         </div>
                     </div>
                     <div class="place-card">
@@ -805,13 +835,18 @@
                         <div class="place-content">
                             <div class="place-name">🍸 Barzin da Praia</div>
                             <div class="place-desc">Nota 4,3 com 1 mil avaliações! Drinks, porções e coquetéis. Mezanino e mesas externas. R$ 40-160.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?q=Barzin+da+Praia+Praia+Grande" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Mal. Mallet, 1108 — ver no mapa</a></div>
                         </div>
                     </div>
                     <div class="place-card">
-                        <div class="place-name">🍺 Matilde Bar</div>
-                        <div class="place-desc">Cerveja gelada, drinks e porções muito bons. R$ 60-160.</div>
+                        <img class="place-img" src="img/matilde.jpg" alt="Matilde Bar" onerror="this.style.display='none'">
+                        <div class="place-content">
+                            <div class="place-name">🍺 Matilde Bar</div>
+                            <div class="place-desc">Cerveja gelada, drinks e porções muito bons. Clima de bar parisiense! R$ 60-160.</div>
+                            <div class="place-distance"><a href="https://maps.google.com/maps?q=Matilde+Bar+Praia+Grande" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Av. Mal. Mallet, 960 — ver no mapa</a></div>
+                        </div>
                     </div>
-                    <div class="place-distance" style="text-align:center;margin-top:8px;"><a href="https://maps.google.com/?q=Av+Mal+Mallet+Praia+Grande+SP" target="_blank" style="color:#b8860b;text-decoration:none;">📍 Ver Av. Mallet no mapa</a></div>
+                    </div>
                     <p style="margin-top:16px;color:#b8a48c;font-size:13px;">💡 Pergunte à Catia! Ela tem as melhores dicas da região.</p>
                 `
             },
@@ -936,6 +971,18 @@
                 `
             }
         };
+
+        function filterCategory(cat) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            document.querySelectorAll('.category-section').forEach(sec => {
+                if (cat === 'todos') {
+                    sec.classList.remove('hidden');
+                } else {
+                    sec.classList.toggle('hidden', sec.dataset.cat !== cat);
+                }
+            });
+        }
 
         function openModal(key) {
             const m = modals[key];
